@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flex Dasar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            background: #f0f0f0;
+            margin: 0;
+            padding: 40px;
+            font-family: sans-serif;
+        }
+
+        .row {
+            display: flex;
+            gap: 5px;
+            background: #f0f0f0;
+            padding: 5px;
+        }
+
+        .col {
+            flex: 1;
+            background: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            min-height: 150px;
+            align-content: center;
+            box-sizing: border-box;
+        }
+
+        ul.col {
+            margin: 0;
+            padding: 20px;
+            text-align: start;
+            list-style: none;
+        }
+
+        .fa-xmark {
+            color: red;
+            margin-right: 8px;
+        }
+
+        .fa-check {
+            color: green;
+            margin-right: 8px;
+        }
+
+        ul.col li {
+            margin-bottom: 12px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 16px 0;
+        }
+
+        .label {
+            color: purple;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 28px;
+            margin: 8px 0 16px 0;
+        }
+
+        h3.solusi {
+            font-size: 28px;
+            margin: 16px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <!-- Kolom kiri: Logo -->
+        <div class="col">
+            <img src="https://flashsoftindonesia.com/fs-logo-vertical.png" alt="Logo Flashsoft" style="width: 250px;">
+        </div>
+
+        <!-- Kolom kanan: Konten -->
+     <ul class="col">
+            <p class="label">## KENDALA DAN SOLUSI</p>
+            <h3><span style="color:purple;">Kendala</span> yang Sering Dihadapi Calon Programmer</h3>
+            <li><i class="fa-solid fa-xmark"></i> Belajar Sendiri Tanpa Arah</li>
+            <li><i class="fa-solid fa-xmark"></i> Kurang Latihan &amp; Proyek Nyata</li>
+            <li><i class="fa-solid fa-xmark"></i> Tidak Punya Mentor</li>
+            <hr class="divider">
+            <h3 class="solusi"><span style="color:purple;">Solusi</span> kami</h3>
+            <li><i class="fa-solid fa-check"></i> Program Belajar Terarah</li>
+            <li><i class="fa-solid fa-check"></i> Bimbingan Mentor Profesional</li>
+            <li><i class="fa-solid fa-check"></i> Latihan &amp; Proyek Nyata</li>
+            <li><i class="fa-solid fa-check"></i> Komunitas &amp; Dukungan Belajar</li>
+        </ul>
+    </div>
+</body>
+
+</html>

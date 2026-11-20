@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashsoft Indonesia - Software Agency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        * { 
+        margin: 0; 
+        padding: 0; box-sizing: border-box; }
+
+        body { line-height: 1.6; color: #333; background: #f2f3f6; font-family: 'Inter', sans-serif; }
+
+        header, section, footer { padding: 60px 20px; }
+
+        h1, h2, h3 { margin-bottom: 15px; text-align: center; }
+
+        p { margin-bottom: 10px; text-align: center; }
+
+        /* 🌐 Navbar */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 8%;
+            background-color: #673499;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+        }
+
+        nav img { height: 40px; }
+
+        .nav-links { display: flex; gap: 30px; }
+
+        .nav-links a { color: #f1f1f1; text-decoration: none; font-size: 14px; transition: 0.3s; }
+
+        .nav-links a:hover { color: #1EBE57; }
+
+        .btn-nav {
+            background-color: #1EBE57;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-nav:hover { background-color: #18a74a; }
+
+        @media (max-width: 768px) { .nav-links { display: none; } }
+
+        /* 🦸 Hero */
+        .hero {
+            background: #673499;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin: auto;
+        }
+
+        .hero h1 { font-size: 2.8em; font-weight: 700; margin-bottom: 10px; }
+
+        .hero p { font-size: 1.1em; margin-bottom: 15px; }
+
+        .hero .subtext { max-width: 600px; margin: 0 auto 25px auto; line-height: 1.6; opacity: 0.9; }
+
+        .hero .btn {
+            background: white;
+            color: #673499;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .hero .btn:hover { background: #f0f0f0; }
+
+        /* 📦 Section */
+        .section { display: flex; flex-wrap: wrap; gap: 50px; padding: 3% 7%; }
+
+        /* 🟣 Section Card (Keunggulan) */
+        .section-card {
+            background: #673499;
+            padding: 3% 5%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 1%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* 💰 Pricing Section */
+        .pricing-section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+        .section-header { margin-bottom: 40px; }
+
+        .section-header p { text-align: start; letter-spacing: 0.1em; text-transform: uppercase; color: #333; font-size: 12px; margin-bottom: 10px; }
+
+        .section-header p span { color: #673499; font-weight: bolder; }
+
+        .section-header h2 { font-size: 28px; font-weight: 500; color: #333; text-align: start; }
+
+        .grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 2px solid #e0e0e0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+        .price-card { background: white; border: 2px solid #673499; }
+
+        .badge {
+            display: inline-block;
+            background-color: #e8e8e8;
+            color: #666;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .badge.popular { background-color: #673499; color: white; }
+
+        .card-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 4px; text-align: start; }
+
+        .card-subtitle { font-size: 12px; color: #999; margin-bottom: 15px; text-align: start; }
+
+        .price-section { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #f0f0f0; }
+
+        .original-price { font-size: 12px; color: #999; text-decoration: line-through; margin-bottom: 4px; }
+
+        .price { font-size: 24px; font-weight: bold; color: #673499; margin-bottom: 4px; }
+
+        .price-unit { font-size: 12px; color: #999; }
+
+        .btn-paket {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #673499;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-paket:hover { background-color: #5a2a82; }
+
+        .features { list-style: none; margin-bottom: 15px; }
+
+        .features li { font-size: 12px; color: #666; margin-bottom: 8px; padding-left: 20px; position: relative; text-align: start; }
+
+        .features li:before { content: "✓"; position: absolute; left: 0; color: #673499; font-weight: bold; }
+
+        .card-footer { font-size: 11px; color: #999; border-top: 1px solid #f0f0f0; padding-top: 12px; text-align: start; }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+            .card-title { font-size: 14px; }
+            .price { font-size: 20px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ✅ Navbar -->
+    <nav>
+        <img src="https://flashsoftindonesia.com/fs-logo-horizontal-white.png" alt="Flashsoft Indonesia Logo">
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#benefit">Keunggulan Kami</a>
+            <a href="#testimonial">Testimoni</a>
+            <a href="#pricing">Program</a>
+            <a href="#contact">Kontak</a>
+        </div>
+        <a href="#pricing" class="btn-nav">Daftar Sekarang</a>
+    </nav>
+
+    <!-- 1️⃣ Hero Section -->
+    <section class="hero" id="home">
+        <h1>Flashsoft Indonesia</h1>
+        <p class="subtext">Kami membantu Anda membangun solusi software dan mengembangkan talenta digital melalui program pelatihan, bootcamp, dan pembelajaran interaktif.</p>
+        <a href="#pricing" class="btn">Jelajahi Program</a>
+    </section>
+
+    <!-- 2️⃣ Problem & Solution Section -->
+    <section class="section" id="problem">
+        <div style="flex:1; min-width:280px; padding:30px; text-align:center;">
+            <img src="https://flashsoftindonesia.com/fs-logo-vertical.png" alt="Logo Flashsoft" width="50%">
+        </div>
+        <div style="flex:1; min-width:300px;">
+            <p style="text-align:start; letter-spacing:0.1em; text-transform:uppercase;">
+                <span style="color:#6a1b9a; font-weight:bolder;">##</span> Kendala dan Solusi
+            </p>
+            <h2 style="font-size:30px; margin-bottom:20px; text-align:start; font-weight:lighter; line-height:normal; max-width:50%;">
+                <span style="color:#6a1b9a; font-weight:bolder;">Kendala</span> yang Sering Dihadapi Calon Programmer
+            </h2>
+            <ul style="text-align:start; list-style:none;">
+                <li><h3 style="text-align:left; font-weight:lighter; font-size:medium;"><i class="fa-solid fa-xmark" style="color:#c00; margin-right:8px;"></i>Belajar Sendiri Tanpa Arah</h3></li>
+                <li><h3 style="text-align:left; font-weight:lighter; font-size:medium;"><i class="fa-solid fa-xmark" style="color:#c00; margin-right:8px;"></i>Kurang Latihan & Proyek Nyata</h3></li>
+                <li><h3 style="text-align:left; font-weight:lighter; font-size:medium;"><i class="fa-solid fa-xmark" style="color:#c00; margin-right:8px;"></i>Tidak Punya Mentor</h3></li>
+            </ul>
+            <hr style="color:#673499; margin:30px 0;">
+            <h2 style="font-size:30px; margin-bottom:20px; text-align:start; font-weight:lighter; line-height:normal;">
+                <span style="color:#6a1b9a; font-weight:bolder;">Solusi</span> kami
+            </h2>
+            <ul style="text-align:start; list-style:none;">
+                <li><h3 style="text-align:left; font-weight:lighter; font-size:medium;"><i class="fa-solid fa-check" style="color:#1EBE57; margin-right:8px;"></i>Program Belajar Terarah</h3></li>
+                <li><h3 style="text-align:left; font-weight:lighter; font-size:medium;"><i class="fa-solid fa-check" style="color:#1EBE57; margin-right:8px;"></i>Bimbingan Mentor Profesional</h3></li>
+                <li><h3 style="text-align:left; font-weight:lighter; font-size:medium;"><i class="fa-solid fa-check" style="color:#1EBE57; margin-right:8px;"></i>Latihan & Proyek Nyata</h3></li>
+                <li><h3 style="text-align:left; font-weight:lighter; font-size:medium;"><i class="fa-solid fa-check" style="color:#1EBE57; margin-right:8px;"></i>Komunitas & Dukungan Belajar</h3></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 3️⃣ Features / Benefits -->
+    <section class="section-card" id="benefit">
+        <div style="flex:2; min-width:300px; color:white;">
+            <p style="text-align:start; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px;">
+                <span style="color:white; font-weight:bolder;">##</span> Keunggulan Kami
+            </p>
+            <h2 style="font-size:36px; margin-bottom:20px; text-align:start; font-weight:lighter; line-height:1.3;">
+                Mengapa Memilih <span style="color:white; font-weight:bolder;">Kami</span>
+            </h2>
+            <div style="display:grid; gap:12px; text-align:start; font-size:16px; line-height:1.6;">
+                <div>🚀 Belajar bisa dari nol — cocok untuk pemula tanpa pengalaman coding.</div>
+                <div>🌍 Materi selalu update mengikuti tren teknologi industri.</div>
+                <div>🎯 Pendekatan belajar berbasis proyek (project-based learning).</div>
+                <div>🤝 Akses komunitas dan mentoring pribadi dari para ahli.</div>
+            </div>
+        </div>
+        <div style="flex:1; min-width:280px; max-width:300px; padding:30px; text-align:center;">
+            <img src="https://flashsoftindonesia.com/fs-logo-vertical-white.png" alt="Logo Flashsoft" width="50%">
+        </div>
+    </section>
+
+    <!-- 5️⃣ Pricing / Offer -->
+    <div class="pricing-section" id="pricing">
+        <div class="section-header">
+            <p><span>##</span> PRICELIST</p>
+            <h2>Pilih Program yang cocok untukmu.</h2>
+        </div>
+        <div class="grid">
+            <!-- #1 Private Coding - Basic -->
+            <div class="card price-card">
+                <span class="badge">REGULAR</span>
+                <h3 class="card-title">Private Coding - <span style="color:#ff9500;">Basic</span></h3>
+                <p class="card-subtitle">Cocok untuk yang mau belajar</p>
+                <div class="price-section">
+                    <div class="price">Rp 120.000</div>
+                    <div class="price-unit">/pertemuan</div>
+                </div>
+                <button class="btn-paket">Pilih Paket</button>
+                <ul class="features">
+                    <li>5x Pertemuan</li>
+                    <li>Durasi Kelas 120 menit</li>
+                    <li>Fleksibel Jadwal</li>
+                    <li>Materi Pemrograman DWPJ, Java, Python, React JS</li>
+                </ul>
+                <div class="card-footer">💡 Tersedia untuk semua usia</div>
+            </div>
+
+            <!-- #2 Private Coding - Basic -->
+            <div class="card price-card">
+                <span class="badge">REGULAR</span>
+                <h3 class="card-title">Private Coding - <span style="color:#ff9500;">Basic</span></h3>
+                <p class="card-subtitle">Cocok untuk yang mau belajar</p>
+                <div class="price-section">
+                    <div class="original-price">Rp 150.000</div>
+                    <div class="price">Rp 140.000</div>
+                    <div class="price-unit">/pertemuan</div>
+                </div>
+                <button class="btn-paket">Pilih Paket</button>
+                <ul class="features">
+                    <li>10x Pertemuan</li>
+                    <li>Durasi Kelas 120 menit</li>
+                    <li>Fleksibel Jadwal</li>
+                    <li>Materi Pemrograman DWPJ, Java, Python, React JS</li>
+                </ul>
+                <div class="card-footer">💡 Tersedia untuk semua usia</div>
+            </div>
+
+            <!-- #3 Private Coding - Advanced -->
+            <div class="card price-card">
+                <span class="badge">REGULAR</span>
+                <h3 class="card-title">Private Coding - <span style="color:#673499;">Advanced</span></h3>
+                <p class="card-subtitle">Cocok untuk yang mau belajar</p>
+                <div class="price-section">
+                    <div class="price">Rp 150.000</div>
+                    <div class="price-unit">/pertemuan</div>
+                </div>
+                <button class="btn-paket">Pilih Paket</button>
+                <ul class="features">
+                    <li>5x Pertemuan</li>
+                    <li>Durasi Kelas 120 menit</li>
+                    <li>Fleksibel Jadwal</li>
+                    <li>Materi Pemrograman Struktur, Python, MySQL, Dll</li>
+                </ul>
+                <div class="card-footer">💡 Tersedia untuk semua usia</div>
+            </div>
+
+            <!-- #4 Private Coding - Advanced -->
+            <div class="card price-card">
+                <span class="badge popular">POPULAR</span>
+                <h3 class="card-title">Private Coding - <span style="color:#673499;">Advanced</span></h3>
+                <p class="card-subtitle">Cocok untuk yang mau belajar</p>
+                <div class="price-section">
+                    <div class="original-price">Rp 180.000</div>
+                    <div class="price">Rp 170.000</div>
+                    <div class="price-unit">/pertemuan</div>
+                </div>
+                <button class="btn-paket">Pilih Paket</button>
+                <ul class="features">
+                    <li>10x Pertemuan</li>
+                    <li>Durasi Kelas 120 menit</li>
+                    <li>Fleksibel Jadwal</li>
+                    <li>Materi Pemrograman Struktur, Python, MySQL, Dll</li>
+                </ul>
+                <div class="card-footer">💡 Tersedia untuk semua usia</div>
+            </div>
+
+            <!-- #5 Live Coding - Basic -->
+            <div class="card price-card">
+                <span class="badge">REGULAR</span>
+                <h3 class="card-title">Live Coding - <span style="color:#ff9500;">Basic</span></h3>
+                <p class="card-subtitle">Cocok untuk yang mau instan</p>
+                <div class="price-section">
+                    <div class="price">Rp 200.000</div>
+                    <div class="price-unit">/pertemuan</div>
+                </div>
+                <button class="btn-paket">Pilih Paket</button>
+                <ul class="features">
+                    <li>5x Pertemuan</li>
+                    <li>Durasi Kelas 120 menit</li>
+                    <li>Jadwal Fix Setiap Minggu</li>
+                    <li>Materi Pemrograman DWPJ, Java, Python, React JS</li>
+                </ul>
+                <div class="card-footer">💡 Pertemuan Mingguan</div>
+            </div>
+
+            <!-- #6 Live Coding - Basic -->
+            <div class="card price-card">
+                <span class="badge">REGULAR</span>
+                <h3 class="card-title">Live Coding - <span style="color:#ff9500;">Basic</span></h3>
+                <p class="card-subtitle">Cocok untuk yang mau instan</p>
+                <div class="price-section">
+                    <div class="price">Rp 220.000</div>
+                    <div class="price-unit">/pertemuan</div>
+                </div>
+                <button class="btn-paket">Pilih Paket</button>
+                <ul class="features">
+                    <li>10x Pertemuan</li>
+                    <li>Durasi Kelas 120 menit</li>
+                    <li>Jadwal Fix Setiap Minggu</li>
+                    <li>Materi Pemrograman DWPJ, Java, Python, React JS</li>
+                </ul>
+                <div class="card-footer">💡 Pertemuan Mingguan</div>
+            </div>
+
+            <!-- #7 Live Coding - Advanced -->
+            <div class="card price-card">
+                <span class="badge">REGULAR</span>
+                <h3 class="card-title">Live Coding - <span style="color:#673499;">Advanced</span></h3>
+                <p class="card-subtitle">Cocok untuk yang mau instan</p>
+                <div class="price-section">
+                    <div class="price">Rp 300.000</div>
+                    <div class="price-unit">/pertemuan</div>
+                </div>
+                <button class="btn-paket">Pilih Paket</button>
+                <ul class="features">
+                    <li>5x Pertemuan</li>
+                    <li>Durasi Kelas 120 menit</li>
+                    <li>Jadwal Fix Setiap Minggu</li>
+                    <li>Materi Pemrograman Struktur, Python, MySQL, Dll</li>
+                </ul>
+                <div class="card-footer">💡 Pertemuan Mingguan</div>
+            </div>
+
+            <!-- #8 Live Coding - Advanced -->
+            <div class="card price-card">
+                <span class="badge popular">POPULAR</span>
+                <h3 class="card-title">Live Coding - <span style="color:#673499;">Advanced</span></h3>
+                <p class="card-subtitle">Cocok untuk yang mau instan</p>
+                <div class="price-section">
+                    <div class="price">Rp 320.000</div>
+                    <div class="price-unit">/pertemuan</div>
+                </div>
+                <button class="btn-paket">Pilih Paket</button>
+                <ul class="features">
+                    <li>10x Pertemuan</li>
+                    <li>Durasi Kelas 120 menit</li>
+                    <li>Jadwal Fix Setiap Minggu</li>
+                    <li>Materi Pemrograman Struktur, Python, MySQL, Dll</li>
+                </ul>
+                <div class="card-footer">💡 Pertemuan Mingguan</div>
+            </div>
+
+            <!-- #9 Private Coding - Intensive -->
+            <div class="card price-card">
+                <span class="badge">INTENSIF</span>
+                <h3 class="card-title">Private Coding - Intensive</h3>
+                <p class="card-subtitle">Cocok untuk yang mau cepat kuasai</p>
+                <div class="price-section">
+                    <div class="original-price">1.620.000</div>
+                    <div class="price">Rp 1.296.000</div>
+                    <div class="price-unit">/paket</div>
+                </div>
+                <button class="btn-paket">Pilih Paket</button>
+                <ul class="features">
+                    <li>16x Pertemuan</li>
+                    <li>Durasi Kelas 120 menit</li>
+                    <li>Sertifikat & Job Fair</li>
+                    <li>Materi Pemrograman Struktur, Python, MySQL, Dll</li>
+                </ul>
+                <div class="card-footer">💡 Investasi optimal dan paket terlengkap</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

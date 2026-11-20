@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Saran</title>
+    <style>
+        /* CSS Sederhana untuk merapikan form */
+        body {
+            font-family: serif; /* Menggunakan font serif agar mirip dengan gambar referensi */
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px; /* Memberikan jarak antar elemen */
+        }
+
+        /* Mengatur ukuran textarea agar cukup luas */
+        textarea {
+            width: 300px;
+            height: 100px;
+        }
+
+        /* Mengatur jarak antar tombol */
+        button {
+            margin-right: 5px;
+            padding: 2px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Formulir Saran</h2>
+    
+    <form action="submit_saran.php" method="POST">
+        
+        <div class="form-group">
+            Nama:<br>
+            <input type="text" name="nama" required>
+        </div>
+            
+        <div class="form-group">
+            Email:<br>
+            <input type="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            Saran:<br>
+            <textarea name="saran" required></textarea>
+        </div>
+
+        <div class="form-group">
+            Jenis Saran:<br>
+            <select name="jenis_saran" required>
+                <option value="" disabled selected>--Pilih Jenis Saran--</option>
+                <option value="Layanan">Layanan</option>
+                <option value="Paket">Paket</option>
+                <option value="Lainnya">Lainnya</option>
+            </select>
+        </div>
+
+        <br>
+        <button type="submit">Kirim</button>
+        <button type="reset">Reset</button>
+        
+    </form>
+
+</body>
+</html>

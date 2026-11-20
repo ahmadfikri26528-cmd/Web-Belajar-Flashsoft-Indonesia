@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <!-- Basic Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashsoft Indonesia - Testimoni</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .testimonial {
+            font-style: italic;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 30px;
+            grid-auto-rows: auto;
+        }
+
+        @media (max-width: 1200px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card strong {
+            display: block;
+            margin-top: 15px;
+            font-style: normal;
+            color: #333;
+        }
+
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            padding: 3% 7%;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            text-align: start;
+            font-weight: lighter;
+            line-height: normal;
+            max-width: 100%;
+        }
+
+        .header-text {
+            text-align: start;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .header-text span {
+            color: #6a1b9a;
+            font-weight: bolder;
+        }
+
+        h2 span {
+            color: #6a1b9a;
+            font-weight: bolder;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 4️⃣ Social Proof / Testimonial -->
+    <section class="section" id="testimonial">
+        <div style="width: 100%;">
+            <p class="header-text">
+                <span>##</span> Testimoni
+            </p>
+            <h2>Apa <span>Kata</span> Mereka?</h2>
+            <div class="grid">
+                <div class="card testimonial">
+                    "Awalnya saya tidak tahu apa-apa tentang coding. Sekarang saya sudah bisa membuat website sendiri!"
+                    <br><strong>– Intan, Peserta Bootcamp Web Beginner</strong>
+                </div>
+                <div class="card testimonial">
+                    "Mentornya sabar banget dan materinya mudah dipahami. Belajar di Flashsoft bikin semangat terus!"
+                    <br><strong>– Rafi, Siswa Private Coding</strong>
+                </div>
+                <div class="card testimonial">
+                    "Setelah ikut kelas, saya berhasil diterima magang di startup teknologi."
+                    <br><strong>– Dina, Alumni Live Coding React JS</strong>
+                </div>
+                <div class="card testimonial">
+                    "Kurikulum yang disediakan sangat relevan dengan industri. Instruktur sangat responsif dan membantu!"
+                    <br><strong>– Budi, Alumni Live Coding React JS</strong>
+                </div>
+                <div class="card testimonial">
+                    "Program bootcamp ini benar-benar mengubah karir saya. Sekarang saya bekerja sebagai Junior Developer!"
+                    <br><strong>– Sarah, Peserta Bootcamp Web Beginner</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran Hobi</title>
+</head>
+<body>
+    <h2>Form Pendaftaran Hobi</h2>  
+    <form action="submit.php" method="POST">
+        
+        <p>Nama:<br>
+        <input type="text" name="nama" required></p>
+        
+        <p>Email:<br>
+        <input type="email" name="email" required></p>
+        
+        <p>Password:<br>
+        <input type="password" name="password" required></p>
+
+        <p>Favorit olahraga:<br>
+        <input type="radio" name="olahraga" value="Sepak Bola" required> Sepak Bola<br>
+        <input type="radio" name="olahraga" value="Basket" required> Basket</p>
+
+        <p>Hobi Tambahan:<br>
+        <input type="checkbox" name="hobi[]" value="Membaca"> Membaca<br>
+        <input type="checkbox" name="hobi[]" value="Musik"> Musik<br>
+        <input type="checkbox" name="hobi[]" value="Memasak"> Memasak</p>
+
+        <button type="submit">Daftar</button>
+        
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran</title>
+    <style>
+        body {
+            font-family: serif;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        p {
+            margin-top: 10px;   
+            margin-bottom: 5px;
+        }
+        
+        /* Lebar 200px HANYA untuk text, email, dan password */
+        input[type="text"], 
+        input[type="email"], 
+        input[type="password"] {
+            width: 200px;
+        }
+
+        /* Memastikan radio button DAN checkbox ukurannya normal */
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 3px 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Form Pendaftaran</h2>
+    
+    <form action="" method="POST">
+        
+        <p>Username<br>
+        <input type="text" name="username" placeholder="Masukkan username" required>
+        </p>
+        
+        <p>Email<br>
+        <input type="email" name="email" placeholder="Masukkan email" required>
+        </p>
+
+        <p>Password<br>
+        <input type="password" name="password" placeholder="Masukkan password" required>
+        </p>
+
+        <p>Jenis Kelamin<br>
+        <input type="radio" name="jenis_kelamin" value="Laki-laki" required> Laki-laki<br>
+        <input type="radio" name="jenis_kelamin" value="Perempuan" required> Perempuan
+        </p>
+
+        <p>Hobi<br>
+        <input type="checkbox" name="hobi[]" value="Ngoding"> Ngoding<br>
+        <input type="checkbox" name="hobi[]" value="Membaca"> Membaca<br>
+        <input type="checkbox" name="hobi[]" value="Olahraga"> Olahraga
+        </p>
+
+        <button type="submit">Daftar</button>
+        
+    </form>
+
+    <p>Ahmad Fikri Ardianto</p>
+
+</body>
+</html>

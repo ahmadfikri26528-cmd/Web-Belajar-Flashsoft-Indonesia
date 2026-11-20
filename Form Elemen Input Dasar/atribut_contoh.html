@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contoh Atribut Input</title>
+</head>
+<body>
+  <h1>Formulir Pendaftaran</h1>
+
+  <form action="submit.php" method="POST">
+    <!-- Atribut name dan placeholder -->
+    <label for="nama">Nama:</label><br>
+    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="Masukkan email" required><br><br>
+
+    <!-- Atribut value untuk default value -->
+    <label for="kota">Kota:</label><br>
+    <input type="text" id="kota" name="kota" value="Jakarta"><br><br>
+
+    <input type="submit" value="Daftar">
+  </form>
+
+</body>
+</html>
